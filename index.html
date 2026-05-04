@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KeyGuard Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="brand-panel" aria-label="Team introduction">
+      <div class="brand-mark" aria-hidden="true">KG</div>
+      <p class="eyebrow">Built by Raghav & Rishabh</p>
+      <h1>KeyGuard Studio</h1>
+      <p class="intro">
+        A polished security utility from the Raghav and Rishabh team, built to generate strong passwords with clear controls, instant strength feedback, and one-click copy.
+      </p>
+
+      <div class="trust-grid" aria-label="Password guidance">
+        <div>
+          <span>128-bit</span>
+          <p>Recommended entropy target</p>
+        </div>
+        <div>
+          <span>16+</span>
+          <p>Suggested character length</p>
+        </div>
+        <div>
+          <span>4 sets</span>
+          <p>Character mix options</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="generator-card" aria-label="Password generator">
+      <div class="card-header">
+        <div>
+          <p class="eyebrow">KeyGuard Studio</p>
+          <h2>Generate a secure password</h2>
+        </div>
+        <div class="status-pill" id="strengthLabel">Ready</div>
+      </div>
+
+      <div class="password-output">
+        <input id="passwordOutput" type="text" aria-label="Generated password" readonly>
+        <button id="copyButton" class="icon-button" type="button" title="Copy password" aria-label="Copy password">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M8 8h10v12H8z"></path>
+            <path d="M6 16H4V4h12v2"></path>
+          </svg>
+        </button>
+      </div>
+      <p id="copyMessage" class="copy-message" role="status" aria-live="polite"></p>
+
+      <div class="strength-meter" aria-hidden="true">
+        <span id="strengthBar"></span>
+      </div>
+
+      <div class="controls">
+        <label class="range-row" for="lengthInput">
+          <span>Password length</span>
+          <strong id="lengthValue">16</strong>
+        </label>
+        <input id="lengthInput" type="range" min="8" max="32" value="16">
+
+        <div class="option-grid" aria-label="Character options">
+          <label class="check-option">
+            <input type="checkbox" id="uppercase" checked>
+            <span>Uppercase</span>
+          </label>
+          <label class="check-option">
+            <input type="checkbox" id="lowercase" checked>
+            <span>Lowercase</span>
+          </label>
+          <label class="check-option">
+            <input type="checkbox" id="numbers" checked>
+            <span>Numbers</span>
+          </label>
+          <label class="check-option">
+            <input type="checkbox" id="symbols" checked>
+            <span>Symbols</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button id="generateButton" class="primary-button" type="button">Generate password</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
