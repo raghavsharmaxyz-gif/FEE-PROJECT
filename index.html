@@ -11,87 +11,88 @@
 </head>
 <body>
   <main class="app-shell">
-    <section class="brand-panel" aria-label="Team introduction">
-      <div class="brand-mark" aria-hidden="true">KG</div>
-      <p class="eyebrow">Built by Raghav & Rishabh</p>
-      <h1>KeyGuard Studio</h1>
-      <p class="intro">
-        A polished security utility from the Raghav and Rishabh team, built to generate strong passwords with clear controls, instant strength feedback, and one-click copy.
-      </p>
+    <section class="brand-panel">
+      <div>
+        <div class="brand-mark">KG</div>
+        <p class="eyebrow">KeyGuard Studio</p>
+        <h1>Create Powerful Passwords Instantly</h1>
+        <p class="intro">
+          KeyGuard Studio helps users generate secure, customizable passwords with real-time strength analysis and modern browser encryption.
+        </p>
+        <a href="about.html" class="about-button">About Project</a>
+      </div>
 
-      <div class="trust-grid" aria-label="Password guidance">
+      <div class="trust-grid">
         <div>
           <span>128-bit</span>
-          <p>Recommended entropy target</p>
+          <p>Modern security-grade randomness</p>
         </div>
         <div>
           <span>16+</span>
-          <p>Suggested character length</p>
+          <p>Recommended secure password length</p>
         </div>
         <div>
-          <span>4 sets</span>
-          <p>Character mix options</p>
+          <span>100%</span>
+          <p>Client-side generation</p>
         </div>
       </div>
     </section>
 
-    <section class="generator-card" aria-label="Password generator">
+    <section class="generator-card">
       <div class="card-header">
-        <div>
-          <p class="eyebrow">KeyGuard Studio</p>
-          <h2>Generate a secure password</h2>
-        </div>
-        <div class="status-pill" id="strengthLabel">Ready</div>
+        <h2>Password Generator</h2>
+        <div class="status-pill" id="strengthLabel">Strong</div>
       </div>
 
       <div class="password-output">
-        <input id="passwordOutput" type="text" aria-label="Generated password" readonly>
-        <button id="copyButton" class="icon-button" type="button" title="Copy password" aria-label="Copy password">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M8 8h10v12H8z"></path>
-            <path d="M6 16H4V4h12v2"></path>
-          </svg>
+        <input type="text" id="passwordOutput" readonly>
+        <button class="icon-button" id="copyButton">
+          Copy
         </button>
       </div>
-      <p id="copyMessage" class="copy-message" role="status" aria-live="polite"></p>
 
-      <div class="strength-meter" aria-hidden="true">
+      <p class="copy-message" id="copyMessage"></p>
+
+      <div class="strength-meter">
         <span id="strengthBar"></span>
       </div>
 
       <div class="controls">
-        <label class="range-row" for="lengthInput">
-          <span>Password length</span>
+        <div class="range-row">
+          <label for="lengthInput">Password Length</label>
           <strong id="lengthValue">16</strong>
-        </label>
-        <input id="lengthInput" type="range" min="8" max="32" value="16">
+        </div>
 
-        <div class="option-grid" aria-label="Character options">
+        <input type="range" id="lengthInput" min="6" max="32" value="16">
+
+        <div class="option-grid">
           <label class="check-option">
             <input type="checkbox" id="uppercase" checked>
-            <span>Uppercase</span>
+            Uppercase Letters
           </label>
+
           <label class="check-option">
             <input type="checkbox" id="lowercase" checked>
-            <span>Lowercase</span>
+            Lowercase Letters
           </label>
+
           <label class="check-option">
             <input type="checkbox" id="numbers" checked>
-            <span>Numbers</span>
+            Numbers
           </label>
+
           <label class="check-option">
             <input type="checkbox" id="symbols" checked>
-            <span>Symbols</span>
+            Symbols
           </label>
         </div>
-      </div>
 
-      <div class="actions">
-        <button id="generateButton" class="primary-button" type="button">Generate password</button>
+        <button class="primary-button" id="generateButton">
+          Generate Password
+        </button>
       </div>
     </section>
   </main>
-
   <script src="script.js"></script>
 </body>
 </html>
